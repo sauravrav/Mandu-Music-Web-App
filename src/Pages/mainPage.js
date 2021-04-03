@@ -1,7 +1,16 @@
 //Components import
 import Navbar from "../Components/navbar";
+import Player from "../Components/player";
 import styled from "styled-components";
+//importing songs from the data
+import musiclist from "../musicList";
+import { useRef, useState } from "react";
 const MainPage = () => {
+  const [musicList, setMusicList] = useState(musiclist());
+  const [currentMusic, setCurrentMusic] = useState(musicList[0]);
+  const [isPlaying, setIsPlaying] = useState(false);
+  //Referencing the audio
+  const audioRef = useRef(null);
   return (
     <Main>
       <NavFromMain>
@@ -39,12 +48,22 @@ const MainPage = () => {
         </div>
         <Navbar />
       </NavFromMain>
+      <Player
+        currentMusic={currentMusic}
+        setCurrentMusic={setCurrentMusic}
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
+        audioRef={audioRef}
+      />
+      {/* The audio section */}
+      <audio src={currentMusic.audio} ref={audioRef}></audio>
     </Main>
   );
 };
 const Main = styled.div`
   height: 98vh;
   width: 100%;
+  position: relative;
 `;
 const NavFromMain = styled.div`
   display: flex;

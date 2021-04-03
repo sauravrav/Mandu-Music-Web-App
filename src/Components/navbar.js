@@ -4,7 +4,7 @@ const Navbar = () => {
     <Nav>
       <li>Recent</li>
       <li>Favorites</li>
-      <li>Recommendations</li>
+      <li>Playlists</li>
     </Nav>
   );
 };
