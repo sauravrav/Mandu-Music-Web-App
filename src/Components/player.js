@@ -12,15 +12,30 @@ const Player = ({
   isPlaying,
   setIsPlaying,
   audioRef,
+  audioState,
+  setAudioState,
 }) => {
+  //Handling the play pause function
   const audioHandle = () => {
     if (isPlaying) {
-      audioRef.current.play();
-      setIsPlaying(!isPlaying);
-    } else {
       audioRef.current.pause();
       setIsPlaying(!isPlaying);
+    } else {
+      audioRef.current.play();
+      setIsPlaying(!isPlaying);
     }
+  };
+  //Handling the input slider
+  const sliderHandler = (e) => {
+    console.log(e.target.value);
+    audioRef.current.currentTime = e.target.value;
+    setAudioState({ ...audioState, currentTime: e.target.value });
+  };
+  //Converting time into mins and sec
+  const minSecTime = (time) => {
+    return (
+      Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
+    );
   };
   return (
     <PlayComps>
@@ -29,9 +44,17 @@ const Player = ({
         <h2>{currentMusic.artist}</h2>
       </SongInfo>
       <Range>
-        <h2>0:00</h2>
-        <input type="range" name="" id="" />
-        <h2>0:00</h2>
+        <h2>{minSecTime(audioState.currentTime)}</h2>
+        <input
+          type="range"
+          name=""
+          id=""
+          min={0}
+          max={audioState.duration}
+          value={audioState.currentTime}
+          onChange={sliderHandler}
+        />
+        <h2>{minSecTime(audioState.duration)}</h2>
       </Range>
       <Buttons>
         <div className="previous">
@@ -47,6 +70,7 @@ const Player = ({
             className="fsIcon"
             size="4x"
             id="backward"
+            onClick={audioHandle}
             icon={isPlaying ? faPause : faPlay}
           />
         </div>

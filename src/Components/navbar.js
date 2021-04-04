@@ -1,10 +1,10 @@
 import styled from "styled-components";
-const Navbar = () => {
+const Navbar = ({ libraryStatus, setLibraryStatus }) => {
   return (
     <Nav>
       <li>Recent</li>
       <li>Favorites</li>
-      <li>Playlists</li>
+      <li onClick={() => setLibraryStatus(!libraryStatus)}>Playlists</li>
     </Nav>
   );
 };

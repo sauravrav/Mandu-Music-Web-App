@@ -1,0 +1,32 @@
+.library {
+  height: 600px;
+  width: 400px;
+  border: 2px solid pink;
+  position: fixed;
+  right: 0;
+  bottom: 10px;
+  transform: translateX(100%);
+  transition: all 0.3s ease;
+  overflow-y: scroll;
+}
+.library-transformed {
+  transform: translateX(0%);
+  transition: all 0.3s ease;
+}
+//for firefox
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+//for chrome edge and others
+*::-webkit-scrollbar {
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar {
+  background-color: rgba(196, 27, 27, 0.5);
+  border-radius: 20px;
+  border: transparent;
+}

@@ -2,15 +2,30 @@
 import Navbar from "../Components/navbar";
 import Player from "../Components/player";
 import styled from "styled-components";
+import Library from "../Components/library";
 //importing songs from the data
 import musiclist from "../musicList";
 import { useRef, useState } from "react";
 const MainPage = () => {
   const [musicList, setMusicList] = useState(musiclist());
-  const [currentMusic, setCurrentMusic] = useState(musicList[0]);
+  const [currentMusic, setCurrentMusic] = useState(musicList[3]);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [libraryStatus, setLibraryStatus] = useState(false);
   //Referencing the audio
   const audioRef = useRef(null);
+  //State of the audio
+  const [audioState, setAudioState] = useState({
+    currentTime: 0,
+    duration: 0,
+  });
+  //Function to manage currentTime and duration
+  const timeUpdateManager = (e) => {
+    console.log(e.target.currentTime);
+    setAudioState({
+      currentTime: e.target.currentTime,
+      duration: e.target.duration,
+    });
+  };
   return (
     <Main>
       <NavFromMain>
@@ -46,7 +61,10 @@ const MainPage = () => {
             />
           </svg>
         </div>
-        <Navbar />
+        <Navbar
+          libraryStatus={libraryStatus}
+          setLibraryStatus={setLibraryStatus}
+        />
       </NavFromMain>
       <Player
         currentMusic={currentMusic}
@@ -54,9 +72,21 @@ const MainPage = () => {
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}
         audioRef={audioRef}
+        audioState={audioState}
+        setAudioState={setAudioState}
+      />
+      <Library
+        musicList={musicList}
+        libraryStatus={libraryStatus}
+        setLibraryStatus={setLibraryStatus}
       />
       {/* The audio section */}
-      <audio src={currentMusic.audio} ref={audioRef}></audio>
+      <audio
+        src={currentMusic.audio}
+        ref={audioRef}
+        onTimeUpdate={timeUpdateManager}
+        onLoadedMetadata={timeUpdateManager}
+      ></audio>
     </Main>
   );
 };
