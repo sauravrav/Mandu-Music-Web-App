@@ -8,7 +8,7 @@ import musiclist from "../musicList";
 import { useRef, useState } from "react";
 const MainPage = () => {
   const [musicList, setMusicList] = useState(musiclist());
-  const [currentMusic, setCurrentMusic] = useState(musicList[3]);
+  const [currentMusic, setCurrentMusic] = useState(musicList[4]);
   const [isPlaying, setIsPlaying] = useState(false);
   const [libraryStatus, setLibraryStatus] = useState(false);
   //Referencing the audio
@@ -67,6 +67,8 @@ const MainPage = () => {
         />
       </NavFromMain>
       <Player
+        musicList={musicList}
+        setMusicList={setMusicList}
         currentMusic={currentMusic}
         setCurrentMusic={setCurrentMusic}
         isPlaying={isPlaying}
@@ -77,6 +79,9 @@ const MainPage = () => {
       />
       <Library
         musicList={musicList}
+        setMusicList={setMusicList}
+        currentMusic={currentMusic}
+        setCurrentMusic={setCurrentMusic}
         libraryStatus={libraryStatus}
         setLibraryStatus={setLibraryStatus}
       />

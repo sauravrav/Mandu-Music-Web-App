@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
@@ -7,6 +8,8 @@ import {
   faFastBackward,
 } from "@fortawesome/free-solid-svg-icons";
 const Player = ({
+  musicList,
+  setMusicList,
   currentMusic,
   setCurrentMusic,
   isPlaying,
@@ -37,6 +40,45 @@ const Player = ({
       Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
     );
   };
+  //Handling the next and previous song
+  const skipper = (direction) => {
+    let currentIndex = musicList.findIndex(
+      (indexMusic) => indexMusic.id === currentMusic.id
+    );
+    //for backward skipping
+    if (direction === "backward") {
+      if (currentIndex == 0) {
+        setCurrentMusic(musicList[musicList.length - 1]);
+      } else {
+        setCurrentMusic(musicList[currentIndex - 1]);
+      }
+    }
+    //for forward skipping
+    if (direction === "forward") {
+      if (currentIndex == musicList.length - 1) {
+        setCurrentMusic(musicList[0]);
+      } else {
+        setCurrentMusic(musicList[currentIndex + 1]);
+      }
+    }
+  };
+  //syncing the skip part with highlight of the playlist
+  useEffect(() => {
+    const alteredMusic = musicList.map((altMusic) => {
+      if (altMusic.id === currentMusic.id) {
+        return {
+          ...altMusic,
+          active: true,
+        };
+      } else {
+        return {
+          ...altMusic,
+          active: false,
+        };
+      }
+    });
+    setMusicList(alteredMusic);
+  }, [currentMusic]);
   return (
     <PlayComps>
       <SongInfo>
@@ -63,6 +105,7 @@ const Player = ({
             size="4x"
             id="backward"
             icon={faFastBackward}
+            onClick={() => skipper("backward")}
           />
         </div>
         <div className="playPause">
@@ -80,6 +123,7 @@ const Player = ({
             size="4x"
             id="backward"
             icon={faFastForward}
+            onClick={() => skipper("forward")}
           />
         </div>
       </Buttons>
