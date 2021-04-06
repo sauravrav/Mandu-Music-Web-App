@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Upload</title>
+  </head>
+  <body>
+    <form
+      action="post"
+      method="post"
+      enctype="multipart/form-data"
+      style="margin: 20%"
+    >
+      <h1>File Upload System</h1>
+      <div>
+        <label for="Text">Name</label>
+        <input type="text" name="Text" id="Text" />
+        <label for="Cover">Cover</label>
+        <input type="text" name="Cover" id="Cover" />
+        <label for="Artist">Artist</label>
+        <input type="text" name="Artist" id="Artist" />
+        <label for="Audio">Audio</label>
+        <input type="text" name="Audio" id="Audio" />
+        <label for="Id">Id</label>
+        <input type="text" name="Id" id="Id" />
+        <label for="Active">Active</label>
+        <input type="text" name="Active" id="Active" />
+      </div>
+      <input
+        type="file"
+        name="firstfile"
+        id="firstfile"
+        style="border: 2px solid black"
+      />
+      <!-- <input
+        type="file"
+        name="secondfile"
+        id="secondfile"
+        style="border: 2px solid black"
+      /> -->
+      <br />
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

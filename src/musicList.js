@@ -4,22 +4,22 @@ const MusicList = () => {
     {
       name: "Art of Vivek",
       cover:
-        "http://192.168.43.194:5000/done/d02fc3ab8ccc34a6d1441d1f823d0ceb.jpeg",
+        "http://192.168.43.194:5000/done/9b43f667104ac6736bb3537f723f0989.JPG",
 
       artist: "Vivek Mandal",
       audio:
-        "http://192.168.43.194:5000/done/fe96de1737d7cc835315fac3df598bad.m4a",
+        "http://192.168.43.194:5000/done/480500b78e686fed00905393d91e04ce.m4a",
       color: "lightgreen",
       id: uuidv4(),
       active: true,
     },
     {
-      name: "Jaan Nisar",
+      name: "Educate Smart",
       cover:
-        "https://chillhop.com/wp-content/uploads/2021/02/7f102bdde417f6ead9a120b2b931449e5c12b4da-1024x1024.jpg",
+        "http://192.168.43.194:5000/done/9b43f667104ac6736bb3537f723f0989.JPG",
       artist: "Riddhi",
       audio:
-        "http://192.168.43.194:5000/done/0123903c6d5ee2f7fda4e2d5135496b7.mp3",
+        "http://192.168.43.194:5000/done/480500b78e686fed00905393d91e04ce.m4a",
       color: "lightgreen",
       id: uuidv4(),
       active: false,
@@ -27,9 +27,10 @@ const MusicList = () => {
     {
       name: "Sleepy Boy",
       cover:
-        "https://chillhop.com/wp-content/uploads/2021/02/08cbb0848f669e1bd8b5a5152c4b7d20edf1b499-1024x1024.jpg",
+        "http://192.168.43.194:5000/done/9b43f667104ac6736bb3537f723f0989.JPG",
       artist: "Abhinash Sharma",
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=13015",
+      audio:
+        "http://192.168.43.194:5000/done/480500b78e686fed00905393d91e04ce.m4a",
       color: "lightyellow",
       id: uuidv4(),
       active: false,
@@ -37,9 +38,10 @@ const MusicList = () => {
     {
       name: "Play Boy",
       cover:
-        "https://chillhop.com/wp-content/uploads/2021/02/08cbb0848f669e1bd8b5a5152c4b7d20edf1b499-1024x1024.jpg",
+        "http://192.168.43.194:5000/done/9b43f667104ac6736bb3537f723f0989.JPG",
       artist: "Ajay Bahadur",
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=11246",
+      audio:
+        "http://192.168.43.194:5000/done/480500b78e686fed00905393d91e04ce.m4a",
       color: "lightyellow",
       id: uuidv4(),
       active: false,
@@ -47,9 +49,10 @@ const MusicList = () => {
     {
       name: "Wayu Pradusan",
       cover:
-        "https://chillhop.com/wp-content/uploads/2021/02/7f102bdde417f6ead9a120b2b931449e5c12b4da-1024x1024.jpg",
+        "http://192.168.43.194:5000/done/9b43f667104ac6736bb3537f723f0989.JPG",
       artist: "Lok Mahato",
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=12997",
+      audio:
+        "http://192.168.43.194:5000/done/480500b78e686fed00905393d91e04ce.m4a",
       color: "lightgreen",
       id: uuidv4(),
       active: false,
@@ -57,9 +60,10 @@ const MusicList = () => {
     {
       name: "Sleep Talker",
       cover:
-        "https://chillhop.com/wp-content/uploads/2021/02/7f102bdde417f6ead9a120b2b931449e5c12b4da-1024x1024.jpg",
+        "http://192.168.43.194:5000/done/9b43f667104ac6736bb3537f723f0989.JPG",
       artist: "Bishal Yadav",
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=13014",
+      audio:
+        "http://192.168.43.194:5000/done/480500b78e686fed00905393d91e04ce.m4a",
       color: "lightgreen",
       id: uuidv4(),
       active: false,
@@ -67,9 +71,10 @@ const MusicList = () => {
     {
       name: "The Aain",
       cover:
-        "https://chillhop.com/wp-content/uploads/2021/02/08cbb0848f669e1bd8b5a5152c4b7d20edf1b499-1024x1024.jpg",
+        "http://192.168.43.194:5000/done/9b43f667104ac6736bb3537f723f0989.JPG",
       artist: "Yuvraj Bhattarai",
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=13015",
+      audio:
+        "http://192.168.43.194:5000/done/480500b78e686fed00905393d91e04ce.m4a",
       color: "lightyellow",
       id: uuidv4(),
       active: false,
@@ -77,9 +82,10 @@ const MusicList = () => {
     {
       name: "VolleyBoy",
       cover:
-        "https://chillhop.com/wp-content/uploads/2021/02/08cbb0848f669e1bd8b5a5152c4b7d20edf1b499-1024x1024.jpg",
+        "http://192.168.43.194:5000/done/9b43f667104ac6736bb3537f723f0989.JPG",
       artist: "Dambar Rajput",
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=11246",
+      audio:
+        "http://192.168.43.194:5000/done/480500b78e686fed00905393d91e04ce.m4a",
       color: "lightyellow",
       id: uuidv4(),
       active: false,
@@ -87,9 +93,10 @@ const MusicList = () => {
     {
       name: "Philosophical Fart",
       cover:
-        "https://chillhop.com/wp-content/uploads/2021/02/7f102bdde417f6ead9a120b2b931449e5c12b4da-1024x1024.jpg",
+        "http://192.168.43.194:5000/done/9b43f667104ac6736bb3537f723f0989.JPG",
       artist: "Fushpam",
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=12997",
+      audio:
+        "http://192.168.43.194:5000/done/480500b78e686fed00905393d91e04ce.m4a",
       color: "lightgreen",
       id: uuidv4(),
       active: false,
@@ -97,9 +104,10 @@ const MusicList = () => {
     {
       name: "Stylish Boy",
       cover:
-        "https://chillhop.com/wp-content/uploads/2021/02/7f102bdde417f6ead9a120b2b931449e5c12b4da-1024x1024.jpg",
+        "http://192.168.43.194:5000/done/9b43f667104ac6736bb3537f723f0989.JPG",
       artist: "Boyjit Dance",
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=13014",
+      audio:
+        "http://192.168.43.194:5000/done/480500b78e686fed00905393d91e04ce.m4a",
       color: "lightgreen",
       id: uuidv4(),
       active: false,
