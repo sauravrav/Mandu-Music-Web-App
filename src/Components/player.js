@@ -6,6 +6,8 @@ import {
   faPause,
   faFastForward,
   faFastBackward,
+  faArrowRight,
+  faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
 const Player = ({
   musicList,
@@ -92,7 +94,7 @@ const Player = ({
           name=""
           id=""
           min={0}
-          max={audioState.duration}
+          max={NaN ? "0:00" : audioState.duration}
           value={audioState.currentTime}
           onChange={sliderHandler}
         />
@@ -102,16 +104,16 @@ const Player = ({
         <div className="previous">
           <FontAwesomeIcon
             className="fsIcon"
-            size="4x"
+            size={window.innerWidth <= 760 ? "3x" : "4x"}
             id="backward"
-            icon={faFastBackward}
+            icon={faArrowLeft}
             onClick={() => skipper("backward")}
           />
         </div>
         <div className="playPause">
           <FontAwesomeIcon
             className="fsIcon"
-            size="4x"
+            size={window.innerWidth <= 760 ? "3x" : "4x"}
             id="backward"
             onClick={audioHandle}
             icon={isPlaying ? faPause : faPlay}
@@ -120,9 +122,9 @@ const Player = ({
         <div className="next">
           <FontAwesomeIcon
             className="fsIcon"
-            size="4x"
+            size={window.innerWidth <= 760 ? "3x" : "4x"}
             id="backward"
-            icon={faFastForward}
+            icon={faArrowRight}
             onClick={() => skipper("forward")}
           />
         </div>
@@ -135,12 +137,22 @@ const PlayComps = styled.div`
   flex-direction: column;
   position: fixed;
   bottom: 20px;
+  border: 2px solid pink;
+  @media screen and (max-width: 760px) {
+    margin-left: 10%;
+  }
 `;
 const SongInfo = styled.div`
   border: 2px solid pink;
   display: flex;
   color: white;
   justify-content: space-around;
+  width: 667px;
+  @media screen and (max-width: 760px) {
+    justify-content: space-between;
+    font-size: 70%;
+    width: 300px;
+  }
 `;
 const Range = styled.div`
   border: 2px solid pink;
@@ -151,20 +163,31 @@ const Range = styled.div`
     width: 500px;
   }
   width: 667px;
+  @media screen and (max-width: 760px) {
+    width: 300px;
+    input {
+      width: 400px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+  }
 `;
 const Buttons = styled.div`
   display: flex;
   border: 2px solid pink;
-  width: fit-content;
+  width: 667px;
   padding: 0% 132px 0% 132px;
+  background-color: #975757;
   div {
     border: 2px solid pink;
     height: fit-content;
     width: fit-content;
     margin: 0px 20px 0px 20px;
   }
-  /* .playPause {
-    margin-top: 10px;
-  } */
+  @media screen and (max-width: 760px) {
+    width: 300px;
+    padding: 0px;
+  }
 `;
 export default Player;

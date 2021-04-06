@@ -25,5 +25,11 @@ const Nav = styled.span`
       color: blanchedalmond;
     }
   }
+  @media screen and (max-width: 630px) {
+    /* width: 50%; */
+    li {
+      font-size: 10px;
+    }
+  }
 `;
 export default Navbar;

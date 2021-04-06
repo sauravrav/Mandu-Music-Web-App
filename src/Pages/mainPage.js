@@ -3,6 +3,9 @@ import Navbar from "../Components/navbar";
 import Player from "../Components/player";
 import styled from "styled-components";
 import Library from "../Components/library";
+//importing Fontawesome for icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMusic } from "@fortawesome/free-solid-svg-icons";
 //importing songs from the data
 import musiclist from "../musicList";
 import { useRef, useState } from "react";
@@ -28,7 +31,7 @@ const MainPage = () => {
   };
   return (
     <Main>
-      <NavFromMain>
+      <NavFromMain className="NavFromMain">
         <div className="svg">
           <svg
             width="265"
@@ -92,6 +95,17 @@ const MainPage = () => {
         onTimeUpdate={timeUpdateManager}
         onLoadedMetadata={timeUpdateManager}
       ></audio>
+      <div className="closeButton">
+        <FontAwesomeIcon
+          onClick={() => setLibraryStatus(!libraryStatus)}
+          className="fsIcon"
+          size="3x"
+          icon={faMusic}
+          style={{
+            color: "blanchedalmond",
+          }}
+        />
+      </div>
     </Main>
   );
 };
@@ -99,9 +113,31 @@ const Main = styled.div`
   height: 98vh;
   width: 100%;
   position: relative;
+
+  .closeButton {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    display: none;
+    pointer-events: none;
+  }
+
+  @media screen and (max-width: 630px) {
+    .closeButton {
+      display: inline;
+      pointer-events: all;
+    }
+    .NavFromMain {
+      display: none;
+    }
+  }
 `;
 const NavFromMain = styled.div`
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 630px) {
+    height: 150px;
+  }
 `;
 export default MainPage;
